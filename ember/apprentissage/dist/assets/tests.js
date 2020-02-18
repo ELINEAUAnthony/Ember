@@ -15,6 +15,42 @@ define("apprentissage/tests/acceptance/super-test-test", ["qunit", "@ember/test-
     });
   });
 });
+define("apprentissage/tests/integration/components/jumbo-test", ["qunit", "ember-qunit", "@ember/test-helpers"], function (_qunit, _emberQunit, _testHelpers) {
+  "use strict";
+
+  (0, _qunit.module)('Integration | Component | jumbo', function (hooks) {
+    (0, _emberQunit.setupRenderingTest)(hooks);
+    (0, _qunit.test)('it renders', async function (assert) {
+      // Set any properties with this.set('myProperty', 'value');
+      // Handle any actions with this.set('myAction', function(val) { ... });
+      await (0, _testHelpers.render)(Ember.HTMLBars.template(
+      /*
+        <Jumbo />
+      */
+      {
+        id: "CdoKM4LF",
+        block: "{\"symbols\":[],\"statements\":[[5,\"jumbo\",[],[[],[]]]],\"hasEval\":false}",
+        meta: {}
+      }));
+      assert.equal(this.element.textContent.trim(), ''); // Template block usage:
+
+      await (0, _testHelpers.render)(Ember.HTMLBars.template(
+      /*
+        
+            <Jumbo>
+              template block text
+            </Jumbo>
+          
+      */
+      {
+        id: "+2VZDJGX",
+        block: "{\"symbols\":[],\"statements\":[[0,\"\\n      \"],[5,\"jumbo\",[],[[],[]],{\"statements\":[[0,\"\\n        template block text\\n      \"]],\"parameters\":[]}],[0,\"\\n    \"]],\"hasEval\":false}",
+        meta: {}
+      }));
+      assert.equal(this.element.textContent.trim(), 'template block text');
+    });
+  });
+});
 define("apprentissage/tests/lint/app.lint-test", [], function () {
   "use strict";
 
@@ -52,6 +88,10 @@ define("apprentissage/tests/lint/tests.lint-test", [], function () {
   QUnit.test('acceptance/super-test-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'acceptance/super-test-test.js should pass ESLint\n\n');
+  });
+  QUnit.test('integration/components/jumbo-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/jumbo-test.js should pass ESLint\n\n');
   });
   QUnit.test('test-helper.js', function (assert) {
     assert.expect(1);

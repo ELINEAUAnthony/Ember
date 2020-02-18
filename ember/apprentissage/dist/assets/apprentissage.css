@@ -29,4 +29,9 @@ body {
   background: #f3f3f3;
 }
 
+.tomster {
+  background: url(../assets/images/teaching-tomster.png);
+  /* ...snip... */
+}
+
 /* ...snip... */
