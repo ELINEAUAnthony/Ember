@@ -8,10 +8,45 @@ define("apprentissage/tests/acceptance/super-test-test", ["qunit", "@ember/test-
     (0, _qunit.test)('visiting /', async function (assert) {
       await (0, _testHelpers.visit)('/');
       assert.equal((0, _testHelpers.currentURL)(), '/');
+      assert.dom('nav').exists();
+      assert.dom('h1').hasText('SuperRentals');
       assert.dom('h2').hasText('Welcome to Super Rentals!');
       assert.dom('.jumbo a.button').hasText('About Us');
       await (0, _testHelpers.click)('.jumbo a.button');
       assert.equal((0, _testHelpers.currentURL)(), '/about');
+    });
+    (0, _qunit.test)('visiting /about', async function (assert) {
+      await (0, _testHelpers.visit)('/about');
+      assert.equal((0, _testHelpers.currentURL)(), '/about');
+      assert.dom('nav').exists();
+      assert.dom('h1').hasText('SuperRentals');
+      assert.dom('h2').hasText('About Super Rentals');
+      assert.dom('.jumbo a.button').hasText('Contact Us');
+      await (0, _testHelpers.click)('.jumbo a.button');
+      assert.equal((0, _testHelpers.currentURL)(), '/getting-in-touch');
+    });
+    (0, _qunit.test)('visiting /getting-in-touch', async function (assert) {
+      await (0, _testHelpers.visit)('/getting-in-touch');
+      assert.equal((0, _testHelpers.currentURL)(), '/getting-in-touch');
+      assert.dom('nav').exists();
+      assert.dom('h1').hasText('SuperRentals');
+      assert.dom('h2').hasText('Contact Us');
+      assert.dom('a.button').hasText('About');
+      await (0, _testHelpers.click)('.jumbo a.button');
+      assert.equal((0, _testHelpers.currentURL)(), '/about');
+    });
+    (0, _qunit.test)('navigating using the nav-bar', async function (assert) {
+      await (0, _testHelpers.visit)('/');
+      assert.dom('nav').exists();
+      assert.dom('nav a.menu-index').hasText('SuperRentals');
+      assert.dom('nav a.menu-about').hasText('About');
+      assert.dom('nav a.menu-contact').hasText('Contact');
+      await (0, _testHelpers.click)('nav a.menu-about');
+      assert.equal((0, _testHelpers.currentURL)(), '/about');
+      await (0, _testHelpers.click)('nav a.menu-contact');
+      assert.equal((0, _testHelpers.currentURL)(), '/getting-in-touch');
+      await (0, _testHelpers.click)('nav a.menu-index');
+      assert.equal((0, _testHelpers.currentURL)(), '/');
     });
   });
 });
@@ -20,34 +55,19 @@ define("apprentissage/tests/integration/components/jumbo-test", ["qunit", "ember
 
   (0, _qunit.module)('Integration | Component | jumbo', function (hooks) {
     (0, _emberQunit.setupRenderingTest)(hooks);
-    (0, _qunit.test)('it renders', async function (assert) {
-      // Set any properties with this.set('myProperty', 'value');
-      // Handle any actions with this.set('myAction', function(val) { ... });
+    (0, _qunit.test)('it renders the content inside a jumbo header with a tomster', async function (assert) {
       await (0, _testHelpers.render)(Ember.HTMLBars.template(
       /*
-        <Jumbo />
+        <Jumbo>Hello World</Jumbo>
       */
       {
-        id: "CdoKM4LF",
-        block: "{\"symbols\":[],\"statements\":[[5,\"jumbo\",[],[[],[]]]],\"hasEval\":false}",
+        id: "10C8cDED",
+        block: "{\"symbols\":[],\"statements\":[[5,\"jumbo\",[],[[],[]],{\"statements\":[[0,\"Hello World\"]],\"parameters\":[]}]],\"hasEval\":false}",
         meta: {}
       }));
-      assert.equal(this.element.textContent.trim(), ''); // Template block usage:
-
-      await (0, _testHelpers.render)(Ember.HTMLBars.template(
-      /*
-        
-            <Jumbo>
-              template block text
-            </Jumbo>
-          
-      */
-      {
-        id: "+2VZDJGX",
-        block: "{\"symbols\":[],\"statements\":[[0,\"\\n      \"],[5,\"jumbo\",[],[[],[]],{\"statements\":[[0,\"\\n        template block text\\n      \"]],\"parameters\":[]}],[0,\"\\n    \"]],\"hasEval\":false}",
-        meta: {}
-      }));
-      assert.equal(this.element.textContent.trim(), 'template block text');
+      assert.dom('.jumbo').exists();
+      assert.dom('.jumbo').hasText('Hello World');
+      assert.dom('.jumbo .tomster').exists();
     });
   });
 });
