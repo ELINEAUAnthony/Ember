@@ -157,6 +157,30 @@
 
   _exports.default = _default;
 });
+;define("apprentissage/components/rental/image", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  const __COLOCATED_TEMPLATE__ = Ember.HTMLBars.template(
+  /*
+    {{yield}}
+  */
+  {
+    id: "GMujuIy0",
+    block: "{\"symbols\":[\"&default\"],\"statements\":[[14,1]],\"hasEval\":false}",
+    meta: {
+      moduleName: "apprentissage/components/rental/image.hbs"
+    }
+  });
+
+  var _default = Ember._setComponentTemplate(__COLOCATED_TEMPLATE__, Ember._templateOnlyComponent());
+
+  _exports.default = _default;
+});
 ;define("apprentissage/components/welcome-page", ["exports", "ember-welcome-page/components/welcome-page"], function (_exports, _welcomePage) {
   "use strict";
 

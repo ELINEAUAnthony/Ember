@@ -95,6 +95,42 @@ define("apprentissage/tests/integration/components/rental-test", ["qunit", "embe
     });
   });
 });
+define("apprentissage/tests/integration/components/rental/image-test", ["qunit", "ember-qunit", "@ember/test-helpers"], function (_qunit, _emberQunit, _testHelpers) {
+  "use strict";
+
+  (0, _qunit.module)('Integration | Component | rental/image', function (hooks) {
+    (0, _emberQunit.setupRenderingTest)(hooks);
+    (0, _qunit.test)('it renders', async function (assert) {
+      // Set any properties with this.set('myProperty', 'value');
+      // Handle any actions with this.set('myAction', function(val) { ... });
+      await (0, _testHelpers.render)(Ember.HTMLBars.template(
+      /*
+        <Rental::Image />
+      */
+      {
+        id: "ZrJCpF2U",
+        block: "{\"symbols\":[],\"statements\":[[5,\"rental/image\",[],[[],[]]]],\"hasEval\":false}",
+        meta: {}
+      }));
+      assert.equal(this.element.textContent.trim(), ''); // Template block usage:
+
+      await (0, _testHelpers.render)(Ember.HTMLBars.template(
+      /*
+        
+            <Rental::Image>
+              template block text
+            </Rental::Image>
+          
+      */
+      {
+        id: "hCXt2DaI",
+        block: "{\"symbols\":[],\"statements\":[[0,\"\\n      \"],[5,\"rental/image\",[],[[],[]],{\"statements\":[[0,\"\\n        template block text\\n      \"]],\"parameters\":[]}],[0,\"\\n    \"]],\"hasEval\":false}",
+        meta: {}
+      }));
+      assert.equal(this.element.textContent.trim(), 'template block text');
+    });
+  });
+});
 define("apprentissage/tests/lint/app.lint-test", [], function () {
   "use strict";
 
@@ -144,6 +180,10 @@ define("apprentissage/tests/lint/tests.lint-test", [], function () {
   QUnit.test('integration/components/rental-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'integration/components/rental-test.js should pass ESLint\n\n');
+  });
+  QUnit.test('integration/components/rental/image-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/rental/image-test.js should pass ESLint\n\n');
   });
   QUnit.test('test-helper.js', function (assert) {
     assert.expect(1);
