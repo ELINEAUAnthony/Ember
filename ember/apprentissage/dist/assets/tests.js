@@ -71,6 +71,30 @@ define("apprentissage/tests/integration/components/jumbo-test", ["qunit", "ember
     });
   });
 });
+define("apprentissage/tests/integration/components/rental-test", ["qunit", "ember-qunit", "@ember/test-helpers"], function (_qunit, _emberQunit, _testHelpers) {
+  "use strict";
+
+  (0, _qunit.module)('Integration | Component | rental', function (hooks) {
+    (0, _emberQunit.setupRenderingTest)(hooks);
+    (0, _qunit.test)('it renders information about a rental property', async function (assert) {
+      await (0, _testHelpers.render)(Ember.HTMLBars.template(
+      /*
+        <Rental />
+      */
+      {
+        id: "LsA0MtHE",
+        block: "{\"symbols\":[],\"statements\":[[5,\"rental\",[],[[],[]]]],\"hasEval\":false}",
+        meta: {}
+      }));
+      assert.dom('article').hasClass('rental');
+      assert.dom('article h3').hasText('Grand Old Mansion');
+      assert.dom('article .detail.owner').includesText('Veruca Salt');
+      assert.dom('article .detail.type').includesText('Standalone');
+      assert.dom('article .detail.location').includesText('San Francisco');
+      assert.dom('article .detail.bedrooms').includesText('15');
+    });
+  });
+});
 define("apprentissage/tests/lint/app.lint-test", [], function () {
   "use strict";
 
@@ -92,6 +116,10 @@ define("apprentissage/tests/lint/templates.template.lint-test", [], function () 
     assert.expect(1);
     assert.ok(true, 'apprentissage/templates/about.hbs should pass TemplateLint.\n\n');
   });
+  QUnit.test('apprentissage/templates/application.hbs', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'apprentissage/templates/application.hbs should pass TemplateLint.\n\n');
+  });
   QUnit.test('apprentissage/templates/contact.hbs', function (assert) {
     assert.expect(1);
     assert.ok(true, 'apprentissage/templates/contact.hbs should pass TemplateLint.\n\n');
@@ -112,6 +140,10 @@ define("apprentissage/tests/lint/tests.lint-test", [], function () {
   QUnit.test('integration/components/jumbo-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'integration/components/jumbo-test.js should pass ESLint\n\n');
+  });
+  QUnit.test('integration/components/rental-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/rental-test.js should pass ESLint\n\n');
   });
   QUnit.test('test-helper.js', function (assert) {
     assert.expect(1);

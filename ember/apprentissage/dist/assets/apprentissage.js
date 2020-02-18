@@ -117,6 +117,46 @@
 
   _exports.default = _default;
 });
+;define("apprentissage/components/rental", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  const __COLOCATED_TEMPLATE__ = Ember.HTMLBars.template(
+  /*
+    <article class="rental">
+    <div class="details">
+      <h3>Grand Old Mansion</h3>
+      <div class="detail owner">
+        <span>Owner:</span> Veruca Salt
+      </div>
+      <div class="detail type">
+        <span>Type:</span> Standalone
+      </div>
+      <div class="detail location">
+        <span>Location:</span> San Francisco
+      </div>
+      <div class="detail bedrooms">
+        <span>Number of bedrooms:</span> 15
+      </div>
+    </div>
+  </article>
+  */
+  {
+    id: "7+rxoYPT",
+    block: "{\"symbols\":[],\"statements\":[[7,\"article\",true],[10,\"class\",\"rental\"],[8],[0,\"\\n  \"],[7,\"div\",true],[10,\"class\",\"details\"],[8],[0,\"\\n    \"],[7,\"h3\",true],[8],[0,\"Grand Old Mansion\"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"detail owner\"],[8],[0,\"\\n      \"],[7,\"span\",true],[8],[0,\"Owner:\"],[9],[0,\" Veruca Salt\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"detail type\"],[8],[0,\"\\n      \"],[7,\"span\",true],[8],[0,\"Type:\"],[9],[0,\" Standalone\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"detail location\"],[8],[0,\"\\n      \"],[7,\"span\",true],[8],[0,\"Location:\"],[9],[0,\" San Francisco\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"detail bedrooms\"],[8],[0,\"\\n      \"],[7,\"span\",true],[8],[0,\"Number of bedrooms:\"],[9],[0,\" 15\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}",
+    meta: {
+      moduleName: "apprentissage/components/rental.hbs"
+    }
+  });
+
+  var _default = Ember._setComponentTemplate(__COLOCATED_TEMPLATE__, Ember._templateOnlyComponent());
+
+  _exports.default = _default;
+});
 ;define("apprentissage/components/welcome-page", ["exports", "ember-welcome-page/components/welcome-page"], function (_exports, _welcomePage) {
   "use strict";
 
@@ -431,10 +471,28 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "aUxMqiJg",
-    "block": "{\"symbols\":[],\"statements\":[[5,\"nav-bar\",[],[[],[]]],[0,\"\\n  \"],[5,\"jumbo\",[],[[],[]],{\"statements\":[[0,\"\\n      \"],[7,\"h2\",true],[8],[0,\"About Super Rentals\"],[9],[0,\"\\n      \"],[7,\"p\",true],[8],[0,\"\\n        The Super Rentals website is a delightful project created to explore Ember.\\n        By building a property rental site, we can simultaneously imagine traveling\\n        AND building Ember applications.\\n      \"],[9],[0,\"\\n    \"],[5,\"link-to\",[[12,\"class\",\"button\"]],[[\"@route\"],[\"contact\"]],{\"statements\":[[0,\"Contact Us\"]],\"parameters\":[]}],[0,\"\\n  \"]],\"parameters\":[]}]],\"hasEval\":false}",
+    "id": "lDdwTaxx",
+    "block": "{\"symbols\":[],\"statements\":[[0,\"  \"],[5,\"jumbo\",[],[[],[]],{\"statements\":[[0,\"\\n      \"],[7,\"h2\",true],[8],[0,\"About Super Rentals\"],[9],[0,\"\\n      \"],[7,\"p\",true],[8],[0,\"\\n        The Super Rentals website is a delightful project created to explore Ember.\\n        By building a property rental site, we can simultaneously imagine traveling\\n        AND building Ember applications.\\n      \"],[9],[0,\"\\n    \"],[5,\"link-to\",[[12,\"class\",\"button\"]],[[\"@route\"],[\"contact\"]],{\"statements\":[[0,\"Contact Us\"]],\"parameters\":[]}],[0,\"\\n  \"]],\"parameters\":[]}]],\"hasEval\":false}",
     "meta": {
       "moduleName": "apprentissage/templates/about.hbs"
+    }
+  });
+
+  _exports.default = _default;
+});
+;define("apprentissage/templates/application", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.HTMLBars.template({
+    "id": "2FsM1ttc",
+    "block": "{\"symbols\":[],\"statements\":[[7,\"div\",true],[10,\"class\",\"container\"],[8],[0,\"\\n  \"],[5,\"nav-bar\",[],[[],[]]],[0,\"\\n  \"],[7,\"div\",true],[10,\"class\",\"body\"],[8],[0,\"\\n    \"],[1,[22,\"outlet\"],false],[0,\"\\n  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}",
+    "meta": {
+      "moduleName": "apprentissage/templates/application.hbs"
     }
   });
 
@@ -449,8 +507,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "A1J/hMni",
-    "block": "{\"symbols\":[],\"statements\":[[5,\"nav-bar\",[],[[],[]]],[0,\"\\n  \"],[5,\"jumbo\",[],[[],[]],{\"statements\":[[0,\"\\n    \"],[7,\"h2\",true],[8],[0,\"Contact Us\"],[9],[0,\"\\n    \"],[7,\"p\",true],[8],[0,\"\\n      Super Rentals Representatives would love to help you\"],[7,\"br\",true],[8],[9],[0,\"\\n      choose a destination or answer any questions you may have.\\n    \"],[9],[0,\"\\n    \"],[7,\"address\",true],[8],[0,\"\\n      Super Rentals HQ\\n      \"],[7,\"p\",true],[8],[0,\"\\n        1212 Test Address Avenue\"],[7,\"br\",true],[8],[9],[0,\"\\n        Testington, OR 97233\\n      \"],[9],[0,\"\\n      \"],[7,\"a\",true],[10,\"href\",\"tel:503.555.1212\"],[8],[0,\"+1 (503) 555-1212\"],[9],[7,\"br\",true],[8],[9],[0,\"\\n      \"],[7,\"a\",true],[10,\"href\",\"mailto:superrentalsrep@emberjs.com\"],[8],[0,\"superrentalsrep@emberjs.com\"],[9],[0,\"\\n    \"],[9],[0,\"\\n  \"],[5,\"link-to\",[[12,\"class\",\"button\"]],[[\"@route\"],[\"about\"]],{\"statements\":[[0,\"About\"]],\"parameters\":[]}],[0,\"\\n  \"]],\"parameters\":[]}],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "2bSnfYq/",
+    "block": "{\"symbols\":[],\"statements\":[[0,\"  \"],[5,\"jumbo\",[],[[],[]],{\"statements\":[[0,\"\\n    \"],[7,\"h2\",true],[8],[0,\"Contact Us\"],[9],[0,\"\\n    \"],[7,\"p\",true],[8],[0,\"\\n      Super Rentals Representatives would love to help you\"],[7,\"br\",true],[8],[9],[0,\"\\n      choose a destination or answer any questions you may have.\\n    \"],[9],[0,\"\\n    \"],[7,\"address\",true],[8],[0,\"\\n      Super Rentals HQ\\n      \"],[7,\"p\",true],[8],[0,\"\\n        1212 Test Address Avenue\"],[7,\"br\",true],[8],[9],[0,\"\\n        Testington, OR 97233\\n      \"],[9],[0,\"\\n      \"],[7,\"a\",true],[10,\"href\",\"tel:503.555.1212\"],[8],[0,\"+1 (503) 555-1212\"],[9],[7,\"br\",true],[8],[9],[0,\"\\n      \"],[7,\"a\",true],[10,\"href\",\"mailto:superrentalsrep@emberjs.com\"],[8],[0,\"superrentalsrep@emberjs.com\"],[9],[0,\"\\n    \"],[9],[0,\"\\n  \"],[5,\"link-to\",[[12,\"class\",\"button\"]],[[\"@route\"],[\"about\"]],{\"statements\":[[0,\"About\"]],\"parameters\":[]}],[0,\"\\n  \"]],\"parameters\":[]}],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "apprentissage/templates/contact.hbs"
     }
@@ -467,8 +525,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "SFK7iXK0",
-    "block": "{\"symbols\":[],\"statements\":[[5,\"nav-bar\",[],[[],[]]],[0,\"\\n  \"],[5,\"jumbo\",[],[[],[]],{\"statements\":[[0,\"\\n    \"],[7,\"h2\",true],[8],[0,\"Welcome to Super Rentals!\"],[9],[0,\"\\n    \"],[7,\"p\",true],[8],[0,\"We hope you find exactly what you're looking for in a place to stay.\"],[9],[0,\"\\n    \"],[5,\"link-to\",[[12,\"class\",\"button\"]],[[\"@route\"],[\"about\"]],{\"statements\":[[0,\"About Us\"]],\"parameters\":[]}],[0,\"\\n  \"]],\"parameters\":[]}],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "hwlMt8Kv",
+    "block": "{\"symbols\":[],\"statements\":[[5,\"jumbo\",[],[[],[]],{\"statements\":[[0,\"\\n    \"],[7,\"h2\",true],[8],[0,\"Welcome to Super Rentals!\"],[9],[0,\"\\n    \"],[7,\"p\",true],[8],[0,\"We hope you find exactly what you're looking for in a place to stay.\"],[9],[0,\"\\n    \"],[5,\"link-to\",[[12,\"class\",\"button\"]],[[\"@route\"],[\"about\"]],{\"statements\":[[0,\"About Us\"]],\"parameters\":[]}],[0,\"\\n \"]],\"parameters\":[]}],[0,\"\\n\\n\"],[7,\"div\",true],[10,\"class\",\"rentals\"],[8],[0,\"\\n  \"],[7,\"ul\",true],[10,\"class\",\"results\"],[8],[0,\"\\n    \"],[7,\"li\",true],[8],[5,\"rental\",[],[[],[]]],[9],[0,\"\\n    \"],[7,\"li\",true],[8],[5,\"rental\",[],[[],[]]],[9],[0,\"\\n    \"],[7,\"li\",true],[8],[5,\"rental\",[],[[],[]]],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "apprentissage/templates/index.hbs"
     }
