@@ -71,6 +71,42 @@ define("apprentissage/tests/integration/components/jumbo-test", ["qunit", "ember
     });
   });
 });
+define("apprentissage/tests/integration/components/map-test", ["qunit", "ember-qunit", "@ember/test-helpers"], function (_qunit, _emberQunit, _testHelpers) {
+  "use strict";
+
+  (0, _qunit.module)('Integration | Component | map', function (hooks) {
+    (0, _emberQunit.setupRenderingTest)(hooks);
+    (0, _qunit.test)('it renders', async function (assert) {
+      // Set any properties with this.set('myProperty', 'value');
+      // Handle any actions with this.set('myAction', function(val) { ... });
+      await (0, _testHelpers.render)(Ember.HTMLBars.template(
+      /*
+        <Map />
+      */
+      {
+        id: "n4hG2GE9",
+        block: "{\"symbols\":[],\"statements\":[[5,\"map\",[],[[],[]]]],\"hasEval\":false}",
+        meta: {}
+      }));
+      assert.equal(this.element.textContent.trim(), ''); // Template block usage:
+
+      await (0, _testHelpers.render)(Ember.HTMLBars.template(
+      /*
+        
+            <Map>
+              template block text
+            </Map>
+          
+      */
+      {
+        id: "dhQmuHqA",
+        block: "{\"symbols\":[],\"statements\":[[0,\"\\n      \"],[5,\"map\",[],[[],[]],{\"statements\":[[0,\"\\n        template block text\\n      \"]],\"parameters\":[]}],[0,\"\\n    \"]],\"hasEval\":false}",
+        meta: {}
+      }));
+      assert.equal(this.element.textContent.trim(), 'template block text');
+    });
+  });
+});
 define("apprentissage/tests/integration/components/rental-test", ["qunit", "ember-qunit", "@ember/test-helpers"], function (_qunit, _emberQunit, _testHelpers) {
   "use strict";
 
@@ -95,42 +131,6 @@ define("apprentissage/tests/integration/components/rental-test", ["qunit", "embe
     });
   });
 });
-define("apprentissage/tests/integration/components/rental/image-test", ["qunit", "ember-qunit", "@ember/test-helpers"], function (_qunit, _emberQunit, _testHelpers) {
-  "use strict";
-
-  (0, _qunit.module)('Integration | Component | rental/image', function (hooks) {
-    (0, _emberQunit.setupRenderingTest)(hooks);
-    (0, _qunit.test)('it renders', async function (assert) {
-      // Set any properties with this.set('myProperty', 'value');
-      // Handle any actions with this.set('myAction', function(val) { ... });
-      await (0, _testHelpers.render)(Ember.HTMLBars.template(
-      /*
-        <Rental::Image />
-      */
-      {
-        id: "ZrJCpF2U",
-        block: "{\"symbols\":[],\"statements\":[[5,\"rental/image\",[],[[],[]]]],\"hasEval\":false}",
-        meta: {}
-      }));
-      assert.equal(this.element.textContent.trim(), ''); // Template block usage:
-
-      await (0, _testHelpers.render)(Ember.HTMLBars.template(
-      /*
-        
-            <Rental::Image>
-              template block text
-            </Rental::Image>
-          
-      */
-      {
-        id: "hCXt2DaI",
-        block: "{\"symbols\":[],\"statements\":[[0,\"\\n      \"],[5,\"rental/image\",[],[[],[]],{\"statements\":[[0,\"\\n        template block text\\n      \"]],\"parameters\":[]}],[0,\"\\n    \"]],\"hasEval\":false}",
-        meta: {}
-      }));
-      assert.equal(this.element.textContent.trim(), 'template block text');
-    });
-  });
-});
 define("apprentissage/tests/lint/app.lint-test", [], function () {
   "use strict";
 
@@ -138,6 +138,14 @@ define("apprentissage/tests/lint/app.lint-test", [], function () {
   QUnit.test('app.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'app.js should pass ESLint\n\n');
+  });
+  QUnit.test('components/map.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/map.js should pass ESLint\n\n');
+  });
+  QUnit.test('components/rental/image.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'components/rental/image.js should pass ESLint\n\n11:5 - Unexpected console statement. (no-console)');
   });
   QUnit.test('router.js', function (assert) {
     assert.expect(1);
@@ -177,13 +185,13 @@ define("apprentissage/tests/lint/tests.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'integration/components/jumbo-test.js should pass ESLint\n\n');
   });
+  QUnit.test('integration/components/map-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/map-test.js should pass ESLint\n\n');
+  });
   QUnit.test('integration/components/rental-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'integration/components/rental-test.js should pass ESLint\n\n');
-  });
-  QUnit.test('integration/components/rental/image-test.js', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'integration/components/rental/image-test.js should pass ESLint\n\n');
   });
   QUnit.test('test-helper.js', function (assert) {
     assert.expect(1);

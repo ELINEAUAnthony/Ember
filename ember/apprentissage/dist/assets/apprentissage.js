@@ -81,6 +81,32 @@
 
   _exports.default = _default;
 });
+;define("apprentissage/components/map", ["exports", "@glimmer/component"], function (_exports, _component) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  const __COLOCATED_TEMPLATE__ = Ember.HTMLBars.template(
+  /*
+    {{yield}}
+  */
+  {
+    id: "l3Df2cyC",
+    block: "{\"symbols\":[\"&default\"],\"statements\":[[14,1]],\"hasEval\":false}",
+    meta: {
+      moduleName: "apprentissage/components/map.hbs"
+    }
+  });
+
+  class MapComponent extends _component.default {}
+
+  _exports.default = MapComponent;
+
+  Ember._setComponentTemplate(__COLOCATED_TEMPLATE__, MapComponent);
+});
 ;define("apprentissage/components/nav-bar", ["exports"], function (_exports) {
   "use strict";
 
@@ -128,6 +154,10 @@
   const __COLOCATED_TEMPLATE__ = Ember.HTMLBars.template(
   /*
     <article class="rental">
+     <Rental::Image
+      src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
+      alt="A picture of Grand Old Mansion"
+    />
     <div class="details">
       <h3>Grand Old Mansion</h3>
       <div class="detail owner">
@@ -146,8 +176,8 @@
   </article>
   */
   {
-    id: "7+rxoYPT",
-    block: "{\"symbols\":[],\"statements\":[[7,\"article\",true],[10,\"class\",\"rental\"],[8],[0,\"\\n  \"],[7,\"div\",true],[10,\"class\",\"details\"],[8],[0,\"\\n    \"],[7,\"h3\",true],[8],[0,\"Grand Old Mansion\"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"detail owner\"],[8],[0,\"\\n      \"],[7,\"span\",true],[8],[0,\"Owner:\"],[9],[0,\" Veruca Salt\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"detail type\"],[8],[0,\"\\n      \"],[7,\"span\",true],[8],[0,\"Type:\"],[9],[0,\" Standalone\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"detail location\"],[8],[0,\"\\n      \"],[7,\"span\",true],[8],[0,\"Location:\"],[9],[0,\" San Francisco\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"detail bedrooms\"],[8],[0,\"\\n      \"],[7,\"span\",true],[8],[0,\"Number of bedrooms:\"],[9],[0,\" 15\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}",
+    id: "xmkmCJMe",
+    block: "{\"symbols\":[],\"statements\":[[7,\"article\",true],[10,\"class\",\"rental\"],[8],[0,\"\\n   \"],[5,\"rental/image\",[[12,\"src\",\"https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg\"],[12,\"alt\",\"A picture of Grand Old Mansion\"]],[[],[]]],[0,\"\\n  \"],[7,\"div\",true],[10,\"class\",\"details\"],[8],[0,\"\\n    \"],[7,\"h3\",true],[8],[0,\"Grand Old Mansion\"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"detail owner\"],[8],[0,\"\\n      \"],[7,\"span\",true],[8],[0,\"Owner:\"],[9],[0,\" Veruca Salt\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"detail type\"],[8],[0,\"\\n      \"],[7,\"span\",true],[8],[0,\"Type:\"],[9],[0,\" Standalone\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"detail location\"],[8],[0,\"\\n      \"],[7,\"span\",true],[8],[0,\"Location:\"],[9],[0,\" San Francisco\\n    \"],[9],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"detail bedrooms\"],[8],[0,\"\\n      \"],[7,\"span\",true],[8],[0,\"Number of bedrooms:\"],[9],[0,\" 15\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9]],\"hasEval\":false}",
     meta: {
       moduleName: "apprentissage/components/rental.hbs"
     }
@@ -157,7 +187,7 @@
 
   _exports.default = _default;
 });
-;define("apprentissage/components/rental/image", ["exports"], function (_exports) {
+;define("apprentissage/components/rental/image", ["exports", "@glimmer/component"], function (_exports, _component) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -165,21 +195,55 @@
   });
   _exports.default = void 0;
 
+  var _class, _descriptor, _temp;
+
+  function _initializerDefineProperty(target, property, descriptor, context) { if (!descriptor) return; Object.defineProperty(target, property, { enumerable: descriptor.enumerable, configurable: descriptor.configurable, writable: descriptor.writable, value: descriptor.initializer ? descriptor.initializer.call(context) : void 0 }); }
+
+  function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) { var desc = {}; Object.keys(descriptor).forEach(function (key) { desc[key] = descriptor[key]; }); desc.enumerable = !!desc.enumerable; desc.configurable = !!desc.configurable; if ('value' in desc || desc.initializer) { desc.writable = true; } desc = decorators.slice().reverse().reduce(function (desc, decorator) { return decorator(target, property, desc) || desc; }, desc); if (context && desc.initializer !== void 0) { desc.value = desc.initializer ? desc.initializer.call(context) : void 0; desc.initializer = undefined; } if (desc.initializer === void 0) { Object.defineProperty(target, property, desc); desc = null; } return desc; }
+
+  function _initializerWarningHelper(descriptor, context) { throw new Error('Decorating class property failed. Please ensure that ' + 'proposal-class-properties is enabled and runs after the decorators transform.'); }
+
   const __COLOCATED_TEMPLATE__ = Ember.HTMLBars.template(
   /*
-    {{yield}}
+    
+    <button type="button" class="image {{if this.isLarge "large"}}" {{on "click" this.toggleSize}}>
+      <img ...attributes>
+      <small>View {{if this.isLarge "Smaller" "Larger"}}</small>
+    </button>
   */
   {
-    id: "GMujuIy0",
-    block: "{\"symbols\":[\"&default\"],\"statements\":[[14,1]],\"hasEval\":false}",
+    id: "WtilMK48",
+    block: "{\"symbols\":[\"&attrs\"],\"statements\":[[0,\"\\n  \"],[7,\"button\",false],[12,\"class\",[29,[\"image \",[28,\"if\",[[23,0,[\"isLarge\"]],\"large\"],null]]]],[12,\"type\",\"button\"],[3,\"on\",[\"click\",[23,0,[\"toggleSize\"]]]],[8],[0,\"\\n    \"],[7,\"img\",false],[13,1],[8],[9],[0,\"\\n    \"],[7,\"small\",true],[8],[0,\"View \"],[1,[28,\"if\",[[23,0,[\"isLarge\"]],\"Smaller\",\"Larger\"],null],false],[9],[0,\"\\n  \"],[9]],\"hasEval\":false}",
     meta: {
       moduleName: "apprentissage/components/rental/image.hbs"
     }
   });
 
-  var _default = Ember._setComponentTemplate(__COLOCATED_TEMPLATE__, Ember._templateOnlyComponent());
+  let RentalImageComponent = (_class = (_temp = class RentalImageComponent extends _component.default {
+    constructor(...args) {
+      super(...args);
 
-  _exports.default = _default;
+      _initializerDefineProperty(this, "isLarge", _descriptor, this);
+    }
+
+    toggleSize() {
+      this.isLarge = !this.isLarge;
+      console.log('isLarge :', this.isLarge);
+    }
+
+  }, _temp), (_descriptor = _applyDecoratedDescriptor(_class.prototype, "isLarge", [Ember._tracked], {
+    configurable: true,
+    enumerable: true,
+    writable: true,
+    initializer: function () {
+      return false;
+    }
+  }), _applyDecoratedDescriptor(_class.prototype, "toggleSize", [Ember._action], Object.getOwnPropertyDescriptor(_class.prototype, "toggleSize"), _class.prototype)), _class);
+  _exports.default = RentalImageComponent;
+
+  Ember._setComponentTemplate(__COLOCATED_TEMPLATE__, RentalImageComponent);
 });
 ;define("apprentissage/components/welcome-page", ["exports", "ember-welcome-page/components/welcome-page"], function (_exports, _welcomePage) {
   "use strict";
@@ -633,7 +697,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("apprentissage/app")["default"].create({"name":"apprentissage","version":"0.0.0+632016b8"});
+            require("apprentissage/app")["default"].create({"name":"apprentissage","version":"0.0.0+5cd944a0"});
           }
         
 //# sourceMappingURL=apprentissage.map
